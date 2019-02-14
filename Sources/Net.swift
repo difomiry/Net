@@ -49,11 +49,7 @@ open class Net: NetType {
     let task = session.dataTask(with: urlRequest) { data, response, error in
       switch (data, response as? HTTPURLResponse, error) {
       case let (.some(data), .some(response), .none):
-        if 200..<300 ~= response.statusCode {
-          _completion(result: .success(NetResponse(data: data, response: response)))
-        } else {
-          _completion(result: .failure(NetError.invalidResponseCode(response.statusCode)))
-        }
+        _completion(result: .success(NetResponse(data: data, response: response)))
       case let (.none, .none, .some(error)):
         _completion(result: .failure(NetError.invalidResponse(error)))
       default:

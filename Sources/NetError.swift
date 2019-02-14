@@ -1,13 +1,10 @@
 
-import Foundation
-
 public enum NetError {
   case unknown
   case invalidBaseURL
   case invalidPath
   case invalidParameters
   case invalidResponse(Error)
-  case invalidResponseCode(Int)
 }
 
 extension NetError: Error {
@@ -24,8 +21,6 @@ extension NetError: Error {
       return "Invalid Parameters"
     case let .invalidResponse(error):
       return "Invalid Response:\n\(error.localizedDescription)"
-    case let .invalidResponseCode(code):
-      return "Invalid Response Code:\n\(code)"
     }
   }
 
