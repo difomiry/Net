@@ -12,6 +12,7 @@ public protocol TargetType {
   var parameters: Parameters? { get }
   var body: Data? { get }
   var headers: Headers? { get }
+  var credentials: Credentials? { get }
 }
 
 public extension TargetType {
@@ -33,6 +34,10 @@ public extension TargetType {
   }
 
   public var headers: Headers? {
+    return nil
+  }
+
+  public var credentials: Credentials? {
     return nil
   }
 

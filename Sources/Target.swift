@@ -9,6 +9,7 @@ public struct Target: TargetType {
   public let parameters: Parameters?
   public let body: Data?
   public let headers: Headers?
+  public let credentials: Credentials?
 
   public init(
     baseURLString: String,
@@ -16,13 +17,15 @@ public struct Target: TargetType {
     method: HTTPMethod = .get,
     parameters: Parameters? = nil,
     body: Data? = nil,
-    headers: Headers? = nil) {
+    headers: Headers? = nil,
+    credentials: Credentials? = nil) {
     self.baseURLString = baseURLString
     self.path = path
     self.method = method
     self.parameters = parameters
     self.body = body
     self.headers = headers
+    self.credentials = credentials
   }
 
 }
