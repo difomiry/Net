@@ -1,6 +1,6 @@
 
 public enum Credentials {
-  case apiKey(String)
+  case apiKey(String, String)
   case basicAuthentication(String, String)
   case bearerAuthentication(String)
 }

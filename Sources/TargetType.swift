@@ -1,9 +1,9 @@
 
 import Foundation
 
-public typealias Parameters = [String: String]
+public typealias Parameters = [String: Any]
 
-public typealias Headers = [String: String]
+public typealias Headers = [String: Any]
 
 public protocol TargetType {
   var baseURLString: String { get }

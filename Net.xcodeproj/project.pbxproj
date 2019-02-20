@@ -21,6 +21,7 @@
 		847C39DE220F33C100A493CF /* URL+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C39DD220F33C100A493CF /* URL+TargetType.swift */; };
 		849EC45F220F2C9E00DEA080 /* NetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EC45E220F2C9E00DEA080 /* NetTests.swift */; };
 		849EC462220F2D6500DEA080 /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EC460220F2CF900DEA080 /* Net.swift */; };
+		84A7A7B6221DF7B400DB2C28 /* Dictionary+QueryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7A7B5221DF7B400DB2C28 /* Dictionary+QueryString.swift */; };
 		84B0B193221AF4B70022D908 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0B192221AF4B70022D908 /* Credentials.swift */; };
 		OBJ_39 /* Net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Net::Net::Product" /* Net.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		849EC45D220F2BBF00DEA080 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849EC45E220F2C9E00DEA080 /* NetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetTests.swift; sourceTree = "<group>"; };
 		849EC460220F2CF900DEA080 /* Net.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Net.swift; sourceTree = "<group>"; };
+		84A7A7B5221DF7B400DB2C28 /* Dictionary+QueryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+QueryString.swift"; sourceTree = "<group>"; };
 		84B0B192221AF4B70022D908 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		"Net::Net::Product" /* Net.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Net.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Net::NetTests::Product" /* NetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = NetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				847C39D5220F32EE00A493CF /* Data+Decodable.swift */,
+				84A7A7B5221DF7B400DB2C28 /* Dictionary+QueryString.swift */,
 				847C39D7220F335B00A493CF /* String+NetRequestType.swift */,
 				847C39D9220F338C00A493CF /* String+TargetType.swift */,
 				847C39DB220F33A800A493CF /* URL+NetRequestType.swift */,
@@ -222,6 +225,7 @@
 				84B0B193221AF4B70022D908 /* Credentials.swift in Sources */,
 				847C39CB220F312A00A493CF /* NetResponse.swift in Sources */,
 				847C39DA220F338C00A493CF /* String+TargetType.swift in Sources */,
+				84A7A7B6221DF7B400DB2C28 /* Dictionary+QueryString.swift in Sources */,
 				849EC462220F2D6500DEA080 /* Net.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

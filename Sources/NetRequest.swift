@@ -40,18 +40,13 @@ open class NetRequest<Target: TargetType>: NetRequestType {
       throw NetError.invalidPath
     }
 
-    urlComponents.queryItems = []
+    var parameters: Parameters = target.parameters ?? [:]
 
-    func addQueryItem(key: String, value: String) {
-      urlComponents.queryItems?.append(
-        URLQueryItem(name: key, value: value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!))
+    if let credentials = target.credentials, case let Credentials.apiKey(key, value) = credentials {
+      parameters[key] = value
     }
 
-    target.parameters?.forEach { (key, value) in addQueryItem(key: key, value: value) }
-
-    if let credentials = target.credentials, case let Credentials.apiKey(apiKey) = credentials {
-      addQueryItem(key: "api_key", value: apiKey)
-    }
+    urlComponents.queryItems = parameters.queryItems
 
     guard let url = urlComponents.url else {
       throw NetError.invalidParameters
@@ -68,7 +63,7 @@ open class NetRequest<Target: TargetType>: NetRequestType {
       urlRequest.httpBody = body
     }
 
-    target.headers?.forEach { (key, value) in urlRequest.addValue(value, forHTTPHeaderField: key) }
+    target.headers?.forEach { (key, value) in urlRequest.addValue("\(value)", forHTTPHeaderField: key) }
 
     func addAuthorizationHeader(value: String) {
       urlRequest.addValue(value, forHTTPHeaderField: "Authorization")
