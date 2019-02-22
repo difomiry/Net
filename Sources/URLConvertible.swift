@@ -46,7 +46,7 @@ extension URLComponents: URLConvertible {
 
 extension String: URLConvertible {
 
-  /// Returns an `URL` base on this string.
+  /// Returns an `URL` based on this string.
   public func toURL() throws -> URL {
     guard let url = URL(string: self) else {
       throw Error.invalidURL
