@@ -7,9 +7,9 @@ public typealias Task = URLSessionDataTask
 public typealias Completion = (Result<Response, Error>) -> Void
 
 /// Used to execute the requests.
-open class Net {
+open class Client {
 
-  public static let `default` = Net()
+  public static let `default` = Client()
 
   /// An instance of `URLSession`.
   private let session: URLSession

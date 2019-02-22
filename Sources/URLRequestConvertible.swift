@@ -32,7 +32,7 @@ extension String: URLRequestConvertible {
 
   /// Returns an `URLRequest` based on this string.
   public func toURLRequest() throws -> URLRequest {
-    return try self.toURL().toURLRequest()
+    return try toURL().toURLRequest()
   }
 
 }
