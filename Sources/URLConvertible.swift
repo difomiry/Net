@@ -24,7 +24,7 @@ extension URLRequest: URLConvertible {
 
   /// Returns `self.url`.
   public func toURL() throws -> URL {
-    return try url ??? Error.invalidURL
+    return try url ??? Error.invalidURL(url: self)
   }
 
 }
@@ -33,7 +33,7 @@ extension URLComponents: URLConvertible {
 
   /// Returns `self.url`.
   public func toURL() throws -> URL {
-    return try url ??? Error.invalidURL
+    return try url ??? Error.invalidURL(url: self)
   }
 
 }
@@ -42,7 +42,7 @@ extension String: URLConvertible {
 
   /// Returns an `URL` based on this string.
   public func toURL() throws -> URL {
-    return try URL(string: self) ??? Error.invalidURL
+    return try URL(string: self) ??? Error.invalidURL(url: self)
   }
 
 }

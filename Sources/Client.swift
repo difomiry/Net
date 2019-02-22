@@ -56,7 +56,7 @@ open class Client {
       case let (.some(data), .some(response), .none):
         _completion(result: .success(Response(request: urlRequest, response: response, data: data)))
       case let (.none, .none, .some(error)):
-        _completion(result: .failure(Error.invalidResponse(error)))
+        _completion(result: .failure(Error.invalidResponse(error: error)))
       default:
         _completion(result: .failure(Error.unknown))
       }

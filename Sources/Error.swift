@@ -5,13 +5,13 @@ public enum Error {
   case unknown
 
   /// Returned when an `URLConvertible` type fails to fetch a valid `URL`.
-  case invalidURL
+  case invalidURL(url: URLConvertible)
 
   /// Returned when a path string fails to append to a base `URL`.
-  case invalidPath
+  case invalidPath(path: String)
 
   /// Returned when an `URLSessionDataTask` returns a network error.
-  case invalidResponse(Swift.Error)
+  case invalidResponse(error: Swift.Error)
 
 }
 
@@ -21,10 +21,10 @@ extension Error: Swift.Error {
     switch self {
     case .unknown:
       return "Unknown Error"
-    case .invalidURL:
-      return "Invalid URL"
-    case .invalidPath:
-      return "Invalid Path"
+    case let .invalidURL(url):
+      return "Invalid URL: \(url)"
+    case let .invalidPath(path):
+      return "Invalid Path: \(path)"
     case let .invalidResponse(error):
       return "Invalid Response:\n\(error.localizedDescription)"
     }

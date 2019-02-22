@@ -68,7 +68,7 @@ extension Request: URLConvertible {
     }
 
     guard var urlComponents = URLComponents(url: _url, resolvingAgainstBaseURL: true) else {
-      throw Error.invalidPath
+      throw Error.invalidPath(path: path ?? "")
     }
 
     var _parameters: Parameters = parameters ?? [:]
