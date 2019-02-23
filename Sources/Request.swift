@@ -61,23 +61,21 @@ extension Request: URLConvertible {
   /// - Returns: The builded `URL`.
   public func toURL() throws -> URL {
 
-    var _url = try baseURL.toURL()
+    var url = try baseURL.toURL()
 
     if let path = path {
-      _url.appendPathComponent(path)
+      url.appendPathComponent(path)
     }
 
-    guard var urlComponents = URLComponents(url: _url, resolvingAgainstBaseURL: true) else {
-      throw Error.invalidPath(path: path ?? "")
-    }
+    var urlComponents = try URLComponents(url: url) ??? Error.invalidPath(path: path ?? "")
 
-    var _parameters: Parameters = parameters ?? [:]
+    var parameters: Parameters = self.parameters ?? [:]
 
     if let credentials = credentials, case let .apiKey(key, value) = credentials {
-      _parameters[key] = value
+      parameters[key] = value
     }
 
-    urlComponents.queryItems = _parameters.queryItems
+    urlComponents.queryItems = try parameters.toQueryItems()
 
     return try urlComponents.toURL()
   }
@@ -116,6 +114,14 @@ extension Request: URLRequestConvertible {
     urlRequest.httpMethod = method.rawValue
 
     return urlRequest
+  }
+
+}
+
+fileprivate extension URLComponents {
+
+  init?(url: URL) {
+    self.init(url: url, resolvingAgainstBaseURL: true)
   }
 
 }

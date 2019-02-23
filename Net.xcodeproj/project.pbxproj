@@ -118,9 +118,9 @@
 				84E79694221F42CE009C0EFD /* Requestable.swift */,
 				847C39CA220F312A00A493CF /* Response.swift */,
 				847C39CC220F315400A493CF /* Result.swift */,
-				847F145022203D0B00E62598 /* UnwrapOperator.swift */,
 				84C22B78221E262D00462093 /* URLConvertible.swift */,
 				84C22B74221E201900462093 /* URLRequestConvertible.swift */,
+				847F145022203D0B00E62598 /* UnwrapOperator.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;

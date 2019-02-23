@@ -13,6 +13,9 @@ public enum Error {
   /// Returned when an `URLSessionDataTask` returns a network error.
   case invalidResponse(error: Swift.Error)
 
+  /// Returned when a string failed to encode.
+  case stringEncodingFailed(string: String)
+
 }
 
 extension Error: Swift.Error {
@@ -27,6 +30,8 @@ extension Error: Swift.Error {
       return "Invalid Path: \(path)"
     case let .invalidResponse(error):
       return "Invalid Response:\n\(error.localizedDescription)"
+    case let .stringEncodingFailed(string):
+      return "String encoding failed: \(string)"
     }
   }
 
