@@ -1,5 +1,3 @@
-import Foundation
-
 /// An alias for the parameters dictionary.
 public typealias Parameters = [String: Any]
 

@@ -1,5 +1,3 @@
-import Foundation
-
 /// An alias for the `URLSessionDataTask`.
 public typealias Task = URLSessionDataTask
 

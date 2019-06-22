@@ -1,5 +1,3 @@
-import Foundation
-
 public extension Data {
 
   /// Decodes this data to the decodable type and returns it.

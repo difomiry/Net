@@ -1,5 +1,3 @@
-import Foundation
-
 /// Used to create the flexible requests.
 public struct Request: Requestable {
 

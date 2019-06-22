@@ -1,5 +1,3 @@
-import Foundation
-
 /// Provides a converting to the `URLRequest`.
 public protocol URLRequestConvertible {
 

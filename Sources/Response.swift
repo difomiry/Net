@@ -1,5 +1,3 @@
-import Foundation
-
 /// Used to store the request, response and data.
 public struct Response {
 

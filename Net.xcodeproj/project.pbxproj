@@ -263,6 +263,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/Net.h;
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = Net;
 			};
@@ -290,6 +291,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/Net.h;
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = Net;
 			};

@@ -1,5 +1,3 @@
-import Foundation
-
 public extension Dictionary where Key == String, Value == Any {
 
   /// Converts this dictionary to a query string.
