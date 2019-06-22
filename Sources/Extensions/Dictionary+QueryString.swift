@@ -6,7 +6,7 @@ public extension Dictionary where Key == String, Value == Any {
   ///
   /// - Throws: An `Error.stringEncodingFailed` error.
   /// - Returns: A query string.
-  public func toQueryString() throws -> String {
+  func toQueryString() throws -> String {
     return try URLComponents(with: try toQueryItems()).query ??? Error.unknown
   }
 
@@ -14,7 +14,7 @@ public extension Dictionary where Key == String, Value == Any {
   ///
   /// - Throws: An `Error.stringEncodingFailed` error.
   /// - Returns: The query items.
-  public func toQueryItems() throws -> [URLQueryItem] {
+  func toQueryItems() throws -> [URLQueryItem] {
     return try map { (key, value) -> URLQueryItem in
       return URLQueryItem(name: try encode(string: key), value:try encode(string: "\(value)"))
     }

@@ -9,7 +9,7 @@ public extension Data {
   ///   - decoder: An instance of `JSONDecoder`.
   /// - Throws: Any error thrown while decoding.
   /// - Returns: An instance of the decodable type.
-  public func map<T: Decodable>(_ type: T.Type, using decoder: JSONDecoder = .init()) throws -> T {
+  func map<T: Decodable>(_ type: T.Type, using decoder: JSONDecoder = .init()) throws -> T {
     return try decoder.decode(type, from: self)
   }
 

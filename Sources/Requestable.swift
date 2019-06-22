@@ -35,32 +35,32 @@ public protocol Requestable: URLConvertible, URLRequestConvertible {
 public extension Requestable {
 
   /// The empty path.
-  public var path: String? {
+  var path: String? {
     return nil
   }
 
   /// The GET HTTP method.
-  public var method: HTTPMethod {
+  var method: HTTPMethod {
     return .get
   }
 
   /// The empty query parameters.
-  public var parameters: Parameters? {
+  var parameters: Parameters? {
     return nil
   }
 
   /// The empty request body.
-  public var body: Data? {
+  var body: Data? {
     return nil
   }
 
   /// The empty request headers.
-  public var headers: Headers? {
+  var headers: Headers? {
     return nil
   }
 
   /// The empty request credentials.
-  public var credentials: Credentials? {
+  var credentials: Credentials? {
     return nil
   }
 
@@ -72,7 +72,7 @@ public extension URLConvertible where Self: Requestable {
   ///
   /// - Throws: Any error thrown while building the `URL`.
   /// - Returns: The builded `URL`.
-  public func toURL() throws -> URL {
+  func toURL() throws -> URL {
 
     var url = try baseURL.toURL()
 
@@ -101,7 +101,7 @@ public extension URLRequestConvertible where Self: Requestable {
   ///
   /// - Throws: Any error thrown while building the `URLRequest`.
   /// - Returns: The builded `URLRequest`.
-  public func toURLRequest() throws -> URLRequest {
+  func toURLRequest() throws -> URLRequest {
 
     var urlRequest = URLRequest(url: try toURL())
 
