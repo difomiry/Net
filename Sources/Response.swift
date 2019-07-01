@@ -2,12 +2,12 @@
 public struct Response {
 
   /// The request sent to the server.
-  let request: URLRequest
+  public let request: URLRequest
 
   /// The server's response to the request.
-  let response: HTTPURLResponse
+  public let response: HTTPURLResponse
 
   /// The data returned by the server.
-  let data: Data
+  public let data: Data
 
 }
